@@ -2,8 +2,6 @@ import { generateObject } from "ai";
 import { anthropic } from "@ai-sdk/anthropic";
 import { z } from "zod";
 
-const TOKEN = process.env.API_TOKEN!;
-
 export const config = {
   runtime: "edge",
 };
@@ -13,8 +11,9 @@ export default async function handler(req: Request) {
     return new Response(null, { status: 405 });
   }
 
+  const token = process.env.API_TOKEN;
   const auth = req.headers.get("authorization");
-  if (auth !== `Bearer ${TOKEN}`) {
+  if (!token || auth !== `Bearer ${token}`) {
     return new Response(null, { status: 401 });
   }
 

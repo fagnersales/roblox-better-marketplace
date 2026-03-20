@@ -5,5 +5,8 @@
     "ai": "^4",
     "@ai-sdk/anthropic": "^1",
     "zod": "^3"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0"
   }
 }
