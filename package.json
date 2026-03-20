@@ -1,0 +1,9 @@
+{
+  "name": "roblox-better-marketplace",
+  "private": true,
+  "dependencies": {
+    "ai": "^4",
+    "@ai-sdk/anthropic": "^1",
+    "zod": "^3"
+  }
+}
